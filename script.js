@@ -14,11 +14,11 @@ console.log(multiply(2));
 //Zadanie 3
 
 const average = (...param) => {
-  let x = 0;
+  let total = 0;
   param.forEach(item => {
-    x += item;
+    total += item;
   });
-  return x / param.length;
+  return total / param.length;
 };
 
 console.log(average(1, 5, 5, 5, 4, 3, 3, 2, 1));
@@ -34,3 +34,10 @@ const weird = [1, 4, "Iwona", false, "Nowak"];
 const [, , firstName, , lastName] = weird;
 
 console.log(`${firstName} ${lastName}`);
+
+//Zastosowanie reduce()
+
+const averageNew = (...param) => param.reduce((a, b) => a + b) / param.length;
+
+console.log('Nowa średnia wynosi: ', averageNew(...grades));
+

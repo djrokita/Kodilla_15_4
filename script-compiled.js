@@ -23,11 +23,11 @@ var average = function average() {
     param[_key] = arguments[_key];
   }
 
-  var x = 0;
+  var total = 0;
   param.forEach(function (item) {
-    x += item;
+    total += item;
   });
-  return x / param.length;
+  return total / param.length;
 };
 
 console.log(average(1, 5, 5, 5, 4, 3, 3, 2, 1));
@@ -45,3 +45,17 @@ var firstName = weird[2],
 
 
 console.log(firstName + " " + lastName);
+
+//Zastosowanie reduce()
+
+var averageNew = function averageNew() {
+  for (var _len2 = arguments.length, param = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+    param[_key2] = arguments[_key2];
+  }
+
+  return param.reduce(function (a, b) {
+    return a + b;
+  }) / param.length;
+};
+
+console.log('Nowa średnia wynosi: ', averageNew.apply(undefined, grades));
